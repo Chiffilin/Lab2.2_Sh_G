@@ -23,14 +23,20 @@ namespace WindowsFormsApp6
             switch (this.operationCode)
             {
                case 1:
-                    result = (Math.Sqrt(2) *number).ToString();             //Нахождение диагонали
+                    result = (Math.Sqrt(2) *number).ToString();                         //Нахождение диагонали
                   break;
                case 2:
-                    result = (4 * number).ToString();                        //Нахождение периметра
+                    result = (4 * number).ToString();                                   //Нахождение периметра
                    break;
                 case 3:
-                    result = (Math.Pow(number, 2)).ToString();               //Нахождение площади
-                   break;
+                    result = (Math.Pow(number, 2)).ToString();                          //Нахождение площади
+                   break;   
+                case 4:
+                    result = (((2 * number) * (number + 2 * number))).ToString();       //Нахождение площади правильной четырехугольной призмы
+                    break;
+                case 5:
+                    result = (Math.Pow(number,2)*number).ToString();                    //Нахождение объема правильной четырехугольной призмы
+                    break;
                 default:
                     break;
             }

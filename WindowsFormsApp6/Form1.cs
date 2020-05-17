@@ -44,6 +44,12 @@ namespace WindowsFormsApp6
                 case "S":
                     rect.OperationCode = 3;
                     break;
+                case "Sprism":
+                    rect.OperationCode = 4;
+                    break;
+                case "Vprism":
+                    rect.OperationCode = 5;
+                    break;
                 default:
                     break;
             }
