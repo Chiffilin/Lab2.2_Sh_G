@@ -73,6 +73,7 @@ namespace WindowsFormsApp6
         private void Clear_Click(object sender, EventArgs e)
         {
             display.Text = "0";
+            Answer.Text = "0";
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -80,6 +81,12 @@ namespace WindowsFormsApp6
             rect.Number = Convert.ToDouble(display.Text);
             rect.Rectg();
             Answer.Text = rect.Result;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (!display.Text.Contains(","))
+                display.Text += ",";
         }
     }
 }
