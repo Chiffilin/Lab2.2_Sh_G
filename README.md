@@ -1,5 +1,5 @@
-# Lab2.2_Sh_G
-Lab2.2_Sh_GUI
+# Lab2.2_С#_GUI
+Lab2.2
 
 Вариант №1
 
