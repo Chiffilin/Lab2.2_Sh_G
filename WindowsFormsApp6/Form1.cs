@@ -19,6 +19,8 @@ namespace WindowsFormsApp6
             InitializeComponent();
             rect = new Rect();
             isSecondNumber = false;
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*|Bitmap files(*.bmp)|*.bmp|Binary files(*.bin)|*.bin";
+            saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*|Bitmap files(*.bmp)|*.bmp|Binary files(*.bin)|*.bin"; 
         }
        
         public void AddDigit(String digit)
@@ -78,13 +80,13 @@ namespace WindowsFormsApp6
        
         private void Clear_Click(object sender, EventArgs e)
         {
-            display.Text = "0";
+            display.Text = " ";
             Answer.Text = "0";
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            rect.Number = Convert.ToDouble(display.Text);
+           // rect.Number = Convert.ToDouble(display.Text);
             rect.Rectg();
             Answer.Text = rect.Result;
         }
@@ -93,6 +95,31 @@ namespace WindowsFormsApp6
         {
             if (!display.Text.Contains(","))
                 display.Text += ",";
+        }
+
+        private void Open_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = openFileDialog1.FileName;
+            // читаем файл в строку
+            string fileText = System.IO.File.ReadAllText(filename);
+            
+            Answer.Text = fileText;
+            MessageBox.Show("Файл открыт");
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = saveFileDialog1.FileName;
+            // сохраняем текст в файл
+           
+            System.IO.File.WriteAllText(filename, Answer.Text);
+            MessageBox.Show("Файл сохранен");
         }
     }
 }
